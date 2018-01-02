@@ -70,20 +70,6 @@ body {
 <body style="height:1000px" id="body1">
 
 
-<div id="Layer1">
-  <div id="win_top">新建任务<a title="关闭窗口" href="#" style="color:#666" onClick="closeWindow();">[X]</a></div>
-  <br />
-  <div class="content">
-  <table>
-	<tr><td>名称</td><td><input type="text"/> </td></tr>
-	<tr><td>内容</td><td><textarea></textarea> </td></tr>
-	<tr><td colspan="2" align="center" > <input type="button" value="提交" />
-										<input type="button" onClick="closeWindow();" value="取消" />
-	</td></tr>
-
-  </table>
-  </div>
-</div>
 
 	
 	<div class="relative_left" >
@@ -109,6 +95,7 @@ body {
 
 <script src="js/polyfills.js"></script>
 <script src="js/circular.navigation.js"></script>
+<script src="layer/layer.js"></script>
 
 <script type="text/javascript">
 $(function(){	
@@ -132,16 +119,37 @@ function createTask()
 function showWindow()
 {
 	
-	$("#Layer1").show();
+	layer.open({
+	  type: 2,
+	  btn: ['提交', '取消'],
+	  content: 'form1.html',title: '新建任务',
+	  area: ['520px', '295px'],
+	  closeBtn: 1, //显示关闭按钮
+	  btn1: function(){
+		//alert("ok")
+		layer.closeAll();
+			layer.msg('新建成功', {
+			  time: 1000 //20s后自动关闭
+			  
+			});
+	  }
+	  ,btn2: function(){
+		//alert("no")
+		layer.closeAll();
+	  }
+	});
+	
 
-	$("#body1").click();
+	//$("#Layer1").show();
+
+	//$("#body1").click();
 }
 
 function closeWindow()
 {
 
-	$("#Layer1").hide();
-	$("#body1").click();
+	//$("#Layer1").hide();
+	//$("#body1").click();
 
 }
 </script>
