@@ -1,0 +1,10 @@
+/*
+本代码由js代码网收集并编辑整理;
+尊重他人劳动成果;
+转载请保留js代码网链接 - www.jsdaima.com
+*/
+body{background:url(../images/bg.png);color:#FFF}
+a{color:#FFF;}
+.actGotop{position:fixed; _position:absolute; bottom:100px; right:50px; width:150px; height:195px; display:none;}
+.actGotop a,.actGotop a:link{width:150px;height:195px;display:inline-block; background:url(../images/gotop.png) no-repeat; _background:url(../images/gotop.gif) no-repeat; outline:none;}
+.actGotop a:hover{width:150px; height:195px; background:url(../images/gotopd.gif) no-repeat; outline:none;}
