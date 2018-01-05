@@ -42,23 +42,22 @@
 
 <script type="text/javascript">
 $(function(){
-	for(var i = 1;i <= 10; i ++)
+	for(var i = 1;i <= 23; i ++)
 	{
 		createTask(i);
 	}
-
-
 	
 });
 </script>
 <script>
 
-
 function createTask(nextId)
 {
-	var maxCols = 6;
+	var maxCols = 8;
 
 	var id = "layui-layer"+nextId;
+	nextId --;
+	
 	  layer.open({
 	  type: 1,
 	  shade: false,
@@ -69,23 +68,19 @@ function createTask(nextId)
 	});
 	
 	var cols = nextId % maxCols;
-	if(nextId < maxCols)
-	{
-		cols --;
-	}
+
 	var rowsxx = parseInt(nextId / maxCols);
 		
 	//alert("rowsxx:"+rowsxx+",cols:"+cols)
-	console.log("id=>"+id+"%"+maxCols+" cols:=>"+cols+",rows:"+rowsxx+","+nextId+"/"+maxCols+" parseInt="+parseInt(nextId / maxCols))
+	console.log("cols=>"+id+"%"+maxCols+" =>"+cols+",rows:"+rowsxx+","+nextId+"/"+maxCols+" parseInt="+parseInt(nextId / maxCols))
 
-	$("#"+id).css("left",180*cols+"px")
-	$("#"+id).css("top",210*rowsxx+"px")
+	$("#"+id).css("left",50+180*cols+"px")
+	$("#"+id).css("top",50+210*rowsxx+"px")
 }
 
 function showWindow()
 {
 	  var current = layer.open({
-	  id:1000,
 	  type: 2,
 	  btn: ['提交', '取消'],
 	  content: 'form1.html',title: '新建任务',
